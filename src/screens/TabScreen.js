@@ -13,14 +13,16 @@ super();
 this.submit = this.submit.bind(this);
 }
 
-submit(title,post) {
+submit(title,username,email, phonenumber,post) {
 
-if (title && post) {
-    fetch('https://protected-spire-82809.herokuapp.com/post',{
+
+if (title && username && email && phonenumber && post) {
+    fetch('https://salty-spire-54482.herokuapp.com/add',{
     method: 'POST',
     headers: {
-        'Content-Type':'application/x-www-form-urlencoded'},
-        body: 'title=' + title +'&post=' +post
+      'Content-Type':'application/x-www-form-urlencoded'},
+
+        body: 'title=' + title +'&username=' +username + '&email=' + email + '&phonenumber=' + phonenumber + '&post='+post
         }).then(response => {
         this.props.navigation.navigate('Feed');
         });
@@ -30,7 +32,7 @@ if (title && post) {
 render(){
 return(
 
-<ImageBackground source ={ require('../images/water1.jpg')} style = {styles.container} >
+<ImageBackground source ={ require('../images/water.png')} style = {styles.container} >
 
 <Form submit= {this.submit} />
 

@@ -36,8 +36,7 @@ screen: HomeScreen
 Details: {
 screen: DetailsScreen,
 
-navigationOptions: ( {navigation}) => ({title: navigation.state.params.title,
-                                          })
+navigationOptions: ( {navigation}) => ({title: navigation.state.params.title, })
 
 }
 
@@ -47,7 +46,7 @@ const MainScreenNavigator = createAppContainer(createBottomTabNavigator ({
 Home: {
 screen: StackScreen,
 navigationOptions: {
-title :'Feed',
+title:'Feed',
 tabBarIcon: ({ tintColor}) => (
   <FontAwesome name='reorder' color ={tintColor} size ={25}/>
 ),
@@ -70,13 +69,10 @@ screen: DeleteScreen,
 title :'Delete',
 navigationOptions: {
 tabBarIcon: ({tintColor}) => (
-<FontAwesome name='trash-o' color = 'red' size ={25} />
+<FontAwesome name='trash-o' color ={tintColor}  size ={25} />
 ),
 },
 },
-
-
-
 
 }));
 
